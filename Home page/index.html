@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Responsive FOOD Website Design Tutorial</title>
+
+  <!-- aos css cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- google fonts cdn link  -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="icon" href="fire.png" sizes="16x16" type="image/png">
+</head>
+
+<body>
+
+  <!-- header section starts  -->
+
+  <!-- <header>
+    <a href="#" class="logo"><img src="images/logo-img.png" alt=""></a>
+
+    <div id="menu-bar" class="fas fa-hamburger"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#menu">menu</a></li>
+            <li><a href="#popular">popular</a></li>
+            <li><a href="#gallery">gallery</a></li>
+        </ul>
+    </nav>
+</header> -->
+
+  <style>
+    nav {
+      background: #272829;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      padding: 0 100px;
+    }
+
+    nav .logo {
+      color: #fff;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+    nav .nav-items {
+      display: flex;
+      flex: 1;
+      padding: 0 0 0 40px;
+
+    }
+
+    nav .nav-items li {
+      list-style: none;
+      padding: 0 15px;
+
+    }
+
+    nav .nav-items li a {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    nav .nav-items li a:hover {
+      color: #ff3d00;
+    }
+
+    nav form {
+      display: flex;
+      height: 40px;
+      padding: 2px;
+      background: #1e232b;
+      min-width: 18% !important;
+      border-radius: 2px;
+      border: 1px solid rgba(155, 155, 155, 0.2);
+    }
+
+    nav form .search-data {
+      width: 100%;
+      height: 100%;
+      padding: 0 10px;
+      color: #fff;
+      font-size: 17px;
+      border: none;
+      font-weight: 500;
+      background: none;
+    }
+
+    nav form button {
+      padding: 0 15px;
+      color: #fff;
+      font-size: 17px;
+      background: #ff3d00;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    nav form button:hover {
+      background: #e63600;
+    }
+
+    nav .menu-icon,
+    nav .cancel-icon,
+    nav .search-icon {
+      width: 40px;
+      text-align: center;
+      margin: 0 50px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav .menu-icon span,
+    nav .cancel-icon,
+    nav .search-icon {
+      display: none;
+    }
+
+    @media (max-width: 1245px) {
+      nav {
+        padding: 0 50px;
+      }
+    }
+
+    @media (max-width: 1140px) {
+      nav {
+        padding: 0px;
+      }
+
+      nav .logo {
+        flex: 2;
+        text-align: center;
+      }
+
+      nav .nav-items {
+        position: fixed;
+        z-index: 99;
+        top: 70px;
+        width: 100%;
+        left: -100%;
+        height: 100%;
+        padding: 10px 50px 0 50px;
+        text-align: center;
+        background: #14181f;
+        display: inline-block;
+        transition: left 0.3s ease;
+      }
+
+      nav .nav-items.active {
+        left: 0px;
+      }
+
+      nav .nav-items li {
+        line-height: 40px;
+        margin: 30px 0;
+      }
+
+      nav .nav-items li a {
+        font-size: 20px;
+      }
+
+      nav form {
+        position: absolute;
+        top: 80px;
+        right: 50px;
+        opacity: 0;
+        pointer-events: none;
+        transition: top 0.3s ease, opacity 0.1s ease;
+      }
+
+      nav form.active {
+        top: 95px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      nav form:before {
+        position: absolute;
+        content: "";
+        top: -13px;
+        right: 0px;
+        width: 0;
+        height: 0;
+        z-index: -1;
+        border: 10px solid transparent;
+        border-bottom-color: #1e232b;
+        margin: -20px 0 0;
+      }
+
+      nav form:after {
+        position: absolute;
+        content: '';
+        height: 60px;
+        padding: 2px;
+        background: #1e232b;
+        border-radius: 2px;
+        min-width: calc(100% + 20px);
+        z-index: -2;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      nav .menu-icon {
+        display: block;
+      }
+
+      nav .search-icon,
+      nav .menu-icon span {
+        display: block;
+      }
+
+      nav .menu-icon span.hide,
+      nav .search-icon.hide {
+        display: none;
+      }
+
+      nav .cancel-icon.show {
+        display: block;
+      }
+    }
+
+    @media (max-width: 980px) {
+
+      nav .menu-icon,
+      nav .cancel-icon,
+      nav .search-icon {
+        margin: 0 20px;
+      }
+
+      nav form {
+        right: 30px;
+      }
+    }
+
+    @media (max-width: 350px) {
+
+      nav .menu-icon,
+      nav .cancel-icon,
+      nav .search-icon {
+        margin: 0 10px;
+        font-size: 16px;
+      }
+    }
+  </style>
+
+  <nav>
+    <div class="menu-icon">
+      <span class="fas fa-bars"></span>
+    </div>
+    <div class="logo">
+      Flame On
+    </div>
+    <div class="nav-items">
+      <li><a class="active" href="#home">home</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#menu">menu</a></li>
+      <li><a href="#gallery">gallery</a></li>
+    </div>
+    <div class="search-icon">
+      <span class="fas fa-search"></span>
+    </div>
+    <div class="cancel-icon">
+      <span class="fas fa-times"></span>
+    </div>
+    <form action="#">
+      <input type="search" class="search-data" placeholder="Search" required>
+      <button type="submit" class="fas fa-search"></button>
+    </form>
+  </nav>
+
+  <script>
+    const menuBtn = document.querySelector(".menu-icon span");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const items = document.querySelector(".nav-items");
+    const form = document.querySelector("form");
+    menuBtn.onclick = () => {
+      items.classList.add("active");
+      menuBtn.classList.add("hide");
+      searchBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+    }
+    cancelBtn.onclick = () => {
+      items.classList.remove("active");
+      menuBtn.classList.remove("hide");
+      searchBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      form.classList.remove("active");
+      cancelBtn.style.color = "#ff3d00";
+    }
+    searchBtn.onclick = () => {
+      form.classList.add("active");
+      searchBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+    }
+  </script>
+  <!-- header section ends -->
+
+  <!-- home section starts  -->
+
+
+  <section class="home" id="home">
+
+    <div class="content" data-aos="fade-right">
+      <h3>Whats Better Than Home made Food!</h3>
+      <p>Delectable home-cooked food will make you go wow, the foods that are prepared at home are way better than
+        cooked in restaurants, hotels, or someplace else and the main reason why homemade meals are better for health is
+        that homemade food is hygienic!</p>
+      <a href="/Category/Category.html"><button class="btn">Search recipe</button></a>
+
+    </div>
+
+    <div class="image" data-aos="fade-up">
+      <img src="plate.png" alt="">
+    </div>
+
+  </section>
+
+  <!-- home section ends -->
+
+  <!-- about section starts  -->
+
+  <section class="about" id="about">
+
+    <div class="image" data-aos="fade-right"> <img src="girl.jpg" alt=""><img src="bl" alt=""></div>
+
+
+    <div class="content" data-aos="fade-left">
+      <h3>a word about us</h3>
+      <p>A website that introduces our viewers to the delight of food and aspires to be their companion in making
+        delicious food. So join us to create memories with mouth-watering dishes while we’ll guide you through the
+        entire process!</p>
+      <p>Here you will find a list of exquisitely appetizing food that you can prepare for your loved ones..</p>
+      <a href="#"><button class="btn">learn more</button></a>
+    </div>
+
+  </section>
+
+  <!-- about section ends -->
+
+  <section class="menu" id="menu">
+
+    <h1 class="heading"> our delicious <span>menu</span> </h1>
+
+    <ul class="list" data-aos="fade-down">
+      <li class="btn" data-src="images/menu1.jpg">Indian</li>
+      <li class="btn active" data-src="images/menu2.jpg">Chinese</li>
+      <li class="btn" data-src="images/menu3.jpg">Japanese</li>
+      <li class="btn" data-src="images/menu4.jpg">Italian</li>
+    </ul>
+
+    <div class="row" data-aos="fade-right">
+
+      <div class="image" data-aos="fade-left">
+        <!-- <img src="https://images.pexels.com/photos/718742/pexels-photo-718742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" id="menu-img" alt=""> -->
+        <img
+          src="https://www.tripsavvy.com/thmb/W3_hB5HTkGbFwg9j8Yt7zEZuxPQ=/2624x2624/smart/filters:no_upscale()/high-angle-view-of-dumplings-in-bowl-724320745-5b3589b946e0fb003ec7cb89.jpg"
+          id="menu-img" alt="">
+      </div>
+
+      <div class="content">
+        <div class="info">
+          <p>Dumplings are intimidating. But they also are, in fact, delicious. No matter what you stuff them with, the
+            concept of pillowy, soft dough encasing a luscious, super flavorful filling is enough to warm you up from
+            inside to out.</p>
+          <p>Well, with our homemade dumpling recipe, we’re bringing that warm, fuzzy feeling right to your very own
+            kitchen table.</p>
+          <a href="/Category/Category.html"><button class="view">View More</button></a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="gallery" id="gallery">
+
+    <h1 class="heading"> our food <span>gallery</span> </h1>
+
+    <div class="box-container">
+
+      <a href="/Receipe Page/index.html">
+        <div class="box" data-aos="fade-up">
+          <img src="a.jpg" alt="">
+          <h3>Sandwich</h3>
+        </div>
+      </a>
+
+      <div class="box" data-aos="fade-up">
+        <img src="b.jpg" alt="">
+        <h3>Bread</h3>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <img src="c.jpg" alt="">
+        <h3>Frenchfries</h3>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <img src="d.jpg" alt="">
+        <h3>Cake</h3>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <img src="e.jpg" alt="">
+        <h3>Pancakes</h3>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <img src="f.jpg" alt="">
+        <h3>Donuts</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!--sharathchandra-->
+  <footer>
+    <div class="footer">
+      <div class="row">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+      </div>
+
+      <div class="row">
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Career</a></li>
+        </ul>
+      </div>
+
+      <div class="row">
+        Flame on Copyright © 2021 Flame on- All rights reserved |
+      </div>
+    </div>
+  </footer>
+  <!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- aos js cdn link  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- jquery cdn link  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- custom js file link  -->
+  <script src="script.js"></script>
+
+  <!-- initializing aos  -->
+
+  <script>
+
+    AOS.init({
+      delay: 400,
+      duration: 1000
+    })
+
+  </script>
+
+</body>
+
+</html>
